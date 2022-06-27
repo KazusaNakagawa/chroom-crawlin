@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web:
+    platform: linux/amd64
+    image: crawl:1.0.0
+    container_name: crawl
+    build: .
+    ports:
+      - '8888:8888'
+
+    # mount先指定
+    volumes:
+      - '.:/work'
+
+    tty: true
+    stdin_open: true
